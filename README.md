@@ -1,7 +1,7 @@
 # SAES
 本项目是一次信息安全导论实验，根据简单的加解密算法SAES进行设计，详情请见石墨文档[SAES](https://shimo.im/docs/zm1FlCxE3eYCQSSo?fallback=1)。
 ## 简单的加解密模块
-[SAES.java](test/src/SDES.java)：该文件中定义并实现了SAES算法的加密、解密功能,并且扩展实现了双重加密和三重加密。
+[SAES.java](ciper_2/SAES.java)：该文件中定义并实现了SAES算法的加密、解密功能,并且扩展实现了双重加密和三重加密。
 ## 中间相遇攻击破解SAES
 [BruteForceSAES.java](test/src/BruteForceSDES.java)：该文件中定义并实现了针对SAES算法的暴力破解密钥功能,同时实现了针对SAES双重加密的中间相遇攻击。 
 ## CBC
