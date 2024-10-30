@@ -4,7 +4,7 @@
 [SAES.java](ciper_2/SAES.java)：该文件中定义并实现了SAES算法的加密、解密功能,并且扩展实现了双重加密和三重加密。
 ## 中间相遇攻击破解SAES
 [BruteForceSAES.java](ciper_2/BruteForceSAES.java)：该文件中定义并实现了针对SAES算法的暴力破解密钥功能,同时实现了针对SAES双重加密的中间相遇攻击。 
-## CBC
+## CBC密码分组链模式应用
 [CBC.java](ciper_2/CBC.java)：该文件中定义并实现了基于SAES算法的密码分组链(CBC)模式应用。
 ## GUI设计
 [window.java](ciper_2/window.java)：该文件中定义并实现了用户界面，便于进行执行加解密以及破解等功能。
