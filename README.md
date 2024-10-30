@@ -7,7 +7,7 @@
 ## CBC
 [CBC.java](ciper_2/CBC.java)：该文件中定义并实现了基于SAES算法的密码分组链(CBC)模式应用。
 ## GUI设计
-[window.java](test/src/mainForm.java)：该文件中定义并实现了用户界面，便于进行执行加解密以及破解等功能。
+[window.java](ciper_2/window.java)：该文件中定义并实现了用户界面，便于进行执行加解密以及破解等功能。
 ## 过关测试结果
 ### 第1关：基本测试
 该项目根据S-AES算法编写和调试程序，提供GUI解密支持用户交互。输入可以是16bit的数据和16bit的密钥，输出是16bit的密文。  
