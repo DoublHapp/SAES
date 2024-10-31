@@ -171,7 +171,11 @@ public class window {
                     List<Long> result=BruteForceSAES.meetInTheMiddle(p,c);
                     StringBuilder str= new StringBuilder("可能的密钥有：");
                     for (Long aLong : result) {
-                        str.append(aLong).append("、");
+                        StringBuilder s= new StringBuilder(Long.toBinaryString(aLong));
+                        for(int i=s.length();i<32;i++){
+                            s.insert(0, '0');
+                        }
+                        str.append(s).append("、");
                     }
                     print(str.toString());
                 } catch (Exception ex) {
