@@ -11,14 +11,14 @@
 ## 过关测试结果
 ### 第1关：基本测试
 该项目根据S-AES算法编写和调试程序，提供GUI解密支持用户交互。输入可以是16bit的数据和16bit的密钥，输出是16bit的密文。  
-![Test1_Image](测试图片/test1.jpg)
+![Test1_Image](测试图片/Test1_Image.png)
 ### 第2关：交叉测试
 考虑到SAES是算法标准，所有人在编写程序的时候需要使用相同算法流程和转换单元(替换盒、列混淆矩阵等)，以保证算法和程序在异构的系统或平台上都可以正常运行。  
 我们寻找到了另外一个小组进行交叉加解密测试。测试结果截图如下：  
-![Test2_Image1](测试图片/test2_1.jpg)  
-![Test2_Image2](测试图片/test2_2.jpg)  
-![Test2_Image3](测试图片/test2_3.jpg)  
-![Test2_Image4](测试图片/test2_4.jpg)
+![Test2_Image1](测试图片/Test2_Image1.jpg)  
+![Test2_Image2](测试图片/Test2_Image2.jpg)  
+![Test2_Image3](测试图片/Test2_Image3.png)  
+![Test2_Image4](测试图片/Test2_Image4.png)
 ### 第3关：扩展功能
 考虑到向实用性扩展，加密算法的数据输入可以是ASII编码字符串(分组为2 Byte)，对应地输出也可以是ACII字符串(很可能是乱码)。展示效果可见第2关测试。
 ### 第4关：多重加密
