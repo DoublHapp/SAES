@@ -28,26 +28,27 @@ public class BruteForceSAES {
      */
 
 
-    public static List<Long> meetInTheMiddle(String plaintext, String ciphertext) {
+public static List<Long> meetInTheMiddle(String plaintext, String ciphertext) {
         List<Long> possibleKeys = new ArrayList<>();
         long key1, key2;
         long maxKeySize = 65536; // 密钥空间为 16 位，所以总共有 2^16 = 65536 种密钥可能
 
-        Map<String, Long> firstHalfEncryption = new HashMap<>();
+        Map<String, List<Long>> firstHalfEncryption = new HashMap<>();
 
         // 第一步，对于所有可能的 key1, 加密 plaintext
         for (key1 = 0; key1 < maxKeySize; key1++) {
             String midText = SAES.Encrypt(plaintext, key1);
-            firstHalfEncryption.put(midText, key1);
+            firstHalfEncryption.computeIfAbsent(midText, k -> new ArrayList<>()).add(key1);
         }
 
         // 第二步，对于所有可能的 key2, 解密 ciphertext，然后查看是否存在匹配的中间状态
         for (key2 = 0; key2 < maxKeySize; key2++) {
             String decryptedMidText = SAES.Decrypt(ciphertext, key2);
             if (firstHalfEncryption.containsKey(decryptedMidText)) {
-                // 找到相匹配的 midText，返回对应的 key1 与 key2 组合
-                key1 = firstHalfEncryption.get(decryptedMidText);
-                possibleKeys.add((key1 << 16) | key2);// 组合 key1 和 key2 为一个单一的 32 位密钥
+                List<Long> keys1 = firstHalfEncryption.get(decryptedMidText);
+                for (Long k1 : keys1) {
+                    possibleKeys.add((k1 << 16) | key2); // 组合 key1 和 key2 为一个单一的 32 位密钥
+                }
             }
         }
 
